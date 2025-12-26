@@ -1,25 +1,14 @@
-import time
-
 from deals import get_deals
 from telegram import send
 from dedupe import load_sent, mark_sent
 
-# how many deals to post per run
 MAX_POSTS_PER_RUN = 5
-
-# run every 1 hour
-INTERVAL_SECONDS = 60 * 60
-
 
 def run_bot():
     print("🔍 Checking Flipkart deals...")
 
     sent_links = load_sent()
     deals = get_deals()
-
-    if not deals:
-        print("ℹ️ No deals fetched.")
-        return
 
     new_count = 0
 
@@ -53,10 +42,5 @@ def run_bot():
     if new_count == 0:
         print("ℹ️ No new deals found.")
 
-
 if __name__ == "__main__":
-    while True:
-        run_bot()
-        print("⏰ Sleeping for 1 hour...\n")
-        time.sleep(INTERVAL_SECONDS)
-
+    run_bot()
