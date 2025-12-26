@@ -24,7 +24,8 @@ jobs:
 
       - name: Run bot
         env:
-          BOT_TOKEN: ${{ 8071333538:AAFY4GCn-g1yCBBq29Ne9ouB4xD8T35-1oA }}
-          CHAT_ID: ${{ 1003563361184 }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
           python main.py
+
