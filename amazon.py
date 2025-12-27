@@ -2,8 +2,8 @@
 
 from typing import List, Dict
 
-# Temporary static products for learning
-# Later this will be replaced by Amazon API results
+print("🟠 AMAZON MODULE LOADED")
+
 AMAZON_PRODUCTS = [
     {
         "title": "Echo Dot (5th Gen) Smart Speaker",
@@ -16,12 +16,15 @@ AMAZON_PRODUCTS = [
         "link": "https://www.amazon.in/dp/B0C9J5D6Y5",
         "price": "Check on Amazon",
         "note": "Trending mobile"
+    },
+    {
+        "title": "Fire TV Stick 4K",
+        "link": "https://www.amazon.in/dp/B08R6QR863",
+        "price": "Check on Amazon",
+        "note": "Streaming device"
     }
 ]
 
 def get_amazon_products() -> List[Dict]:
-    """
-    Returns a list of Amazon products.
-    Later this function will call Amazon Product Advertising API.
-    """
+    print("🟠 get_amazon_products() CALLED")
     return AMAZON_PRODUCTS
